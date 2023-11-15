@@ -12,7 +12,6 @@ const routes: RouteObject[] = [
         path: ROUTES.HOME,
         element: <PublicRouter />,
         children: [
-            { index: true, element: "/" },
             { path: `${ROUTES.LOGIN}`, element: <Login /> },
             { path: `${ROUTES.HOME_USER}`, element: <Homeuser /> },
         ],
@@ -22,8 +21,6 @@ const routes: RouteObject[] = [
         path: ROUTES.HOME,
         element: <AdminRouter />,
         children: [
-            { index: true, element: "/" },
-            { path: `${ROUTES.LOGIN}`, element: <Login /> },
             { path: `${ROUTES.HOME_ADMIN}`, element: <Homeadmin /> },
         ],
     }

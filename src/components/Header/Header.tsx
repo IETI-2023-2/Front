@@ -2,38 +2,28 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import HomeIcon from '@mui/icons-material/Home';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
 import {Link, useNavigate} from "react-router-dom";
-import {useTheme} from "@mui/material";
 
 const Header = () => {
     const navigate = useNavigate();
-    const theme = useTheme();
     return (
         <AppBar
             position="static"
             sx={{
-                backgroundColor: "White",
-                color: "Black",
-                paddingLeft: "20px",
-                paddingRight: "20px",
+                backgroundColor: "#1d2c59",
+                color: "White",
+                padding: "10px",
             }}
         >
             <Toolbar sx={{ justifyContent: "space-between", fontWeight: "bold" }}>
-                <div style={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
-                    <Link to="/">
-                        <Typography
-                            variant="h5"
-                            fontFamily="Roboto"
-                            component={Link}
-                            to="/"
-                            style={{ textDecoration: "none", color: "black" }}
-                        >
-                            Proyecto IETI
-                        </Typography>
-                    </Link>
-                </div>
+                <Link to="/">
+                    <img
+                        src="/Assets/Icono-notxt.png"
+                        style={{height: "60px", paddingTop: "0px"}}
+                        alt="logo"/>
+                </Link>
                 <div style={{display: "flex", alignItems: "center" }}>
                     <>
                         <Button
@@ -56,21 +46,13 @@ const Header = () => {
                         </Button>
                         <Button
                             color="inherit"
+                            startIcon={<AccountCircleIcon/>}
                             sx={{ textTransform: "none" }}
                             onClick={() => {
-                                navigate("/");
+                                navigate("/login");
                             }}
                         >
-                            Boton 3
-                        </Button>
-                        <Button
-                            color="inherit"
-                            sx={{ textTransform: "none" }}
-                            onClick={() => {
-                                navigate("/");
-                            }}
-                        >
-                            Boton 4
+                            Ingresar
                         </Button>
                     </>
                 </div>

@@ -53,7 +53,7 @@ function Login() {
     return (
         <div className="login-container">
             <div className="left-panel">
-                <img src="/Assets/login.jpeg" alt="Imagen de fondo" />
+                <img src="/Assets/logoo.jpeg" alt="Imagen de fondo" />
             </div>
 
             <div className="right-panel">
@@ -83,7 +83,9 @@ function Login() {
                             required
                         />
                     </div>
-                    <button type="submit">Iniciar Sesión</button>
+                    <button type="submit" style={{backgroundColor: "#1d2c59"}}>
+                        Ingresar
+                    </button>
                 </form>
             </div>
         </div>
