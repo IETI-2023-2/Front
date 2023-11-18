@@ -2,63 +2,104 @@ import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
-import {Link, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Header = () => {
-    const navigate = useNavigate();
-    return (
-        <AppBar
-            position="static"
+  const navigate = useNavigate();
+
+  return (
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: '#1d2c59',
+        color: 'white',
+        padding: '10px',
+      }}
+    >
+      <Toolbar sx={{ justifyContent: 'space-between', fontWeight: 'bold' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/Assets/Icono-notxt.png"
+            style={{ height: '60px', paddingTop: '0px', maxWidth: '150px' }}
+            alt="logo"
+          />
+          <Typography
+            variant="h6"
+            noWrap
             sx={{
-                backgroundColor: "#1d2c59",
-                color: "White",
-                padding: "10px",
+              marginLeft: '10px',
+              fontWeight: 'bold',
+              color: 'white',
             }}
-        >
-            <Toolbar sx={{ justifyContent: "space-between", fontWeight: "bold" }}>
-                <Link to="/">
-                    <img
-                        src="/Assets/Icono-notxt.png"
-                        style={{height: "60px", paddingTop: "0px"}}
-                        alt="logo"/>
-                </Link>
-                <div style={{display: "flex", alignItems: "center" }}>
-                    <>
-                        <Button
-                            color="inherit"
-                            sx={{ textTransform: "none" }}
-                            onClick={() => {
-                                navigate("/");
-                            }}
-                        >
-                            Boton 1
-                        </Button>
-                        <Button
-                            color="inherit"
-                            sx={{ textTransform: "none" }}
-                            onClick={() => {
-                                navigate("/");
-                            }}
-                        >
-                            Boton 2
-                        </Button>
-                        <Button
-                            color="inherit"
-                            startIcon={<AccountCircleIcon/>}
-                            sx={{ textTransform: "none" }}
-                            onClick={() => {
-                                navigate("/login");
-                            }}
-                        >
-                            Ingresar
-                        </Button>
-                    </>
-                </div>
-            </Toolbar>
-        </AppBar>
-    );
+          >
+            AquaTrack
+          </Typography>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <>
+            <Button
+              color="inherit"
+              variant="outlined"
+              sx={{
+                textTransform: 'none',
+                marginRight: '10px',
+                borderRadius: '20px',
+                fontWeight: 'bold',
+                fontSize: '16px',
+                color: 'white',
+                borderColor: 'white',
+              }}
+              onClick={() => {
+                navigate('/');
+              }}
+            >
+              Inicio
+            </Button>
+            <Button
+              color="inherit"
+              variant="outlined"
+              sx={{
+                textTransform: 'none',
+                marginRight: '10px',
+                borderRadius: '20px',
+                fontWeight: 'bold',
+                fontSize: '16px',
+                color: 'white',
+                borderColor: 'white',
+              }}
+              onClick={() => {
+                navigate('/');
+              }}
+            >
+              Testimonios
+            </Button>
+            <Button
+              color="inherit"
+              startIcon={<AccountCircleIcon />}
+              variant="contained"
+              sx={{
+                textTransform: 'none',
+                fontWeight: 'bold',
+                fontSize: '16px',
+                borderRadius: '20px',
+                backgroundColor: '#5bc0de',
+                '&:hover': {
+                  backgroundColor: '#31b0d5',
+                },
+              }}
+              onClick={() => {
+                navigate('/login');
+              }}
+            >
+              Ingresar
+            </Button>
+          </>
+        </div>
+      </Toolbar>
+    </AppBar>
+  );
 };
 
 export default Header;
